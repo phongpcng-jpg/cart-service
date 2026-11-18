@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: cart-postgres
+    environment:
+      POSTGRES_DB: cart_db
+      POSTGRES_USER: cart_user
+      POSTGRES_PASSWORD: cart_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - cart_pg_data:/var/lib/postgresql/data
+
+volumes:
+  cart_pg_data:
